@@ -1,7 +1,7 @@
 # cityscapes-dataset
 
 ## Getting Started
-In order to use the City Scapes dataset, you need to create an account in their website (https://www.cityscapes-dataset.com/). You need to login to download the data. This makes it difficult to download the data directly on your server. You can use the script provided here to directly download the data. 
+In order to use the Cityscapes dataset, you need to create an account on their website (https://www.cityscapes-dataset.com/). You must log in to download the data, which makes it difficult to download the data directly onto your server. You can use the script provided here to download the data directly.
 <br /> 
 
 To download the data, run the following command. Replace myusername and mypassword with your own credentials for the cityscapes website.  
@@ -9,7 +9,7 @@ To download the data, run the following command. Replace myusername and mypasswo
 python download_dataset.py --data-dir data/cityscapes --package-ids 1,3,7 --username myusername --password mypassword
 ```
 
-Use the following mapping for the value of package-ids.
+Use the following mapping for the value of `package-ids`. This mapping can also be found on the [Cityscapes website](https://www.cityscapes-dataset.com/downloads/) by hovering over each download link.
 
 1: gtFine_trainvaltest.zip (241MB) <br /> 
 2: gtCoarse.zip (1.3GB) <br /> 
