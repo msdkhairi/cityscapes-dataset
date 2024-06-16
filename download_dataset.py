@@ -38,7 +38,7 @@ def unzip_file(file_path, data_dir):
         zip_ref.extractall(data_dir)
         print(f"Unzipped: {file_path}")
 
-def main(username, password, data_dir, package_ids):
+def main(username, password, data_dir, package_ids, unzip):
     # Define the login URL
     login_url = 'https://www.cityscapes-dataset.com/login/'
 
@@ -65,7 +65,8 @@ def main(username, password, data_dir, package_ids):
     # Download and unzip the files
     for url in file_urls:
         file_path = download_file(session, url, data_dir)
-        unzip_file(file_path, data_dir)
+        if unzip:
+            unzip_file(file_path, data_dir)
 
     print("Files downloaded and unzipped successfully.")
 
@@ -75,6 +76,7 @@ if __name__ == "__main__":
     parser.add_argument("--password", required=True, help="Your password for the Cityscapes dataset login.")
     parser.add_argument("--data-dir", required=True, help="Directory to save and unzip the downloaded files.")
     parser.add_argument("--package-ids", required=True, help="Comma-separated list of package IDs to download.", type=lambda s: [int(item) for item in s.split(',')])
+    parser.add_argument("--unzip", action="store_true", help="Flag to unzip the downloaded files.")
 
     args = parser.parse_args()
-    main(args.username, args.password, args.data_dir, args.package_ids)
+    main(args.username, args.password, args.data_dir, args.package_ids, args.unzip)
