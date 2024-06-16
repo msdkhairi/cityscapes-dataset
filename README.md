@@ -6,7 +6,7 @@ In order to use the City Scapes dataset, you need to create an account in their 
 
 To download the data, run the following command. Replace myusername and mypassword with your own credentials for the cityscapes website.  
 ```
-python download_dataset.py --data-dir /home/data/cityscapes_v2 --package-ids 1,3,7 --username myusername --password mypassword
+python download_dataset.py --data-dir data/cityscapes --package-ids 1,3,7 --username myusername --password mypassword
 ```
 
 Use the following mapping for the value of package-ids.
